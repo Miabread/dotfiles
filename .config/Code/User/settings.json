@@ -1,9 +1,17 @@
 {
+    // General
     "explorer.confirmDelete": false,
-    "window.menuBarVisibility": "toggle",
     "git.confirmSync": false,
     "git.autofetch": true,
-    "editor.minimap.enabled": false,
+
+    // Visuals 
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
     "editor.fontFamily": "'Fira Code'",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    
+    "cSpell.userWords": [
+        "Fira"
+    ]
 }
