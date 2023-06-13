@@ -1,0 +1,9 @@
+{
+    "explorer.confirmDelete": false,
+    "window.menuBarVisibility": "toggle",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontLigatures": true
+}
