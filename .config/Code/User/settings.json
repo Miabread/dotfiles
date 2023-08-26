@@ -1,17 +1,31 @@
 {
-    // General
-    "explorer.confirmDelete": false,
-    "git.confirmSync": false,
-    "git.autofetch": true,
-
-    // Visuals 
-    "window.menuBarVisibility": "toggle",
-    "editor.minimap.enabled": true,
-    "editor.minimap.renderCharacters": false,
-    "editor.fontFamily": "'Fira Code'",
-    "editor.fontLigatures": true,
-    
-    "cSpell.userWords": [
-        "Fira"
-    ]
+  // General
+  "explorer.confirmDelete": false,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "explorer.confirmDragAndDrop": false,
+  // Visuals
+  "window.menuBarVisibility": "toggle",
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "cSpell.userWords": [
+    "celmode",
+    "Fira",
+    "Itertools",
+    "Peekable",
+    "thiserror"
+  ],
+  // Rust
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.check.overrideCommand": [
+    "cargo",
+    "clippy",
+    "--message-format=json"
+  ],
+  "workbench.panel.defaultLocation": "right"
 }
