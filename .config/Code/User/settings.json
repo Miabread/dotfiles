@@ -11,13 +11,7 @@
   "editor.minimap.renderCharacters": false,
   "editor.fontFamily": "'Fira Code'",
   "editor.fontLigatures": true,
-  "cSpell.userWords": [
-    "celmode",
-    "Fira",
-    "Itertools",
-    "Peekable",
-    "thiserror"
-  ],
+  "cSpell.userWords": ["celmode", "Fira", "Itertools", "Peekable", "thiserror"],
   // Rust
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
@@ -27,5 +21,9 @@
     "clippy",
     "--message-format=json"
   ],
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
