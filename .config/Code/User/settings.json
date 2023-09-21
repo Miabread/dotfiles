@@ -11,7 +11,14 @@
   "editor.minimap.renderCharacters": false,
   "editor.fontFamily": "'Fira Code'",
   "editor.fontLigatures": true,
-  "cSpell.userWords": ["celmode", "Fira", "Itertools", "Peekable", "thiserror"],
+  "cSpell.userWords": [
+    "celmode",
+    "Fira",
+    "Itertools",
+    "Peekable",
+    "sonance",
+    "thiserror"
+],
   // Rust
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
