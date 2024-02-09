@@ -13,9 +13,12 @@ plugins=(
 ZSH=/usr/share/oh-my-zsh/
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$HOME/.cargo/bin/:$PATH
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias neofetch=hyfetch
+alias bunx="bun x"
 
 eval "$(starship init zsh)"
 source /usr/share/nvm/init-nvm.sh

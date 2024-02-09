@@ -13,12 +13,14 @@
   "editor.fontLigatures": true,
   "cSpell.userWords": [
     "celmode",
+    "elysia",
     "Fira",
     "Itertools",
     "Peekable",
     "sonance",
+    "splist",
     "thiserror"
-],
+  ],
   // Rust
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
@@ -32,5 +34,12 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+"typescript.updateImportsOnFileMove.enabled": "always",
+"[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 }
