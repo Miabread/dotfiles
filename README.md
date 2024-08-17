@@ -1,2 +1,2 @@
 # ~/dotfiles
-> Miabread's Nixos & Home-Manager Configuration
+Miabread's Nixos & Home-Manager Configuration
