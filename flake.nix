@@ -16,7 +16,7 @@
     nixosConfigurations.localtoast2 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./hosts/localtoast2/nixos.nix
+        ./base/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
       ];

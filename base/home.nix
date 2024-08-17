@@ -1,14 +1,7 @@
 { ... }:
 
 {
-  imports = [
-    ../../home-manager/hyprland
-    ../../home-manager/zsh
-    ../../home-manager/development
-    ../../home-manager/discord.nix
-  ];
-
-  programs.firefox.enable = true;
+  imports = [ ../home-manager ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
