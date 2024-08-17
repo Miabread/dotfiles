@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -64,4 +64,6 @@
       };
     };
   };
+
+  home.packages = [ pkgs.grimblast ];
 }

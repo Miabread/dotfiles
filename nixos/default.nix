@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./greetd.nix ./hyprland.nix ./stylix.nix ];
+  imports = [ ./login.nix ./desktop.nix ./stylix.nix ];
 }
