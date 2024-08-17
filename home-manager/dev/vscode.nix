@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 
 {
   programs.vscode = {
@@ -11,6 +11,7 @@
         jnoortheen.nix-ide
         streetsidesoftware.code-spell-checker
         icrawl.discord-vscode
+        mkhl.direnv
       ];
 
     userSettings = {
@@ -32,6 +33,4 @@
       "nix.serverSettings" = { nil.formatting.command = [ "nixfmt" ]; };
     };
   };
-
-  home.packages = with pkgs; [ nil nixfmt-classic ];
 }
