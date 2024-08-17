@@ -1,10 +1,17 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
+
+    extensions =
+      with inputs.nix-vscode-extensions.extensions."x86_64-linux".vscode-marketplace; [
+        jnoortheen.nix-ide
+        streetsidesoftware.code-spell-checker
+        icrawl.discord-vscode
+      ];
 
     userSettings = {
       # General

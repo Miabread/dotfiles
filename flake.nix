@@ -10,6 +10,8 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
