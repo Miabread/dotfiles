@@ -13,6 +13,16 @@
         "hyprland/workspaces" = {
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
           "on-scroll-down" = "hyprctl dispatch workspace e-1";
+
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
+          };
+          "persistent-workspaces"."*" = 5;
         };
 
         "hyprland/window" = {
