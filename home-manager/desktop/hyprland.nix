@@ -18,6 +18,9 @@
         "SUPER, slash, exec, code ~/dotfiles"
         ", Print, exec, grimblast copy area"
 
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+
         "SUPER, left, movefocus, l"
         "SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"

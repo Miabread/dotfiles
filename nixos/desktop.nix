@@ -23,5 +23,6 @@
   environment.systemPackages = with pkgs; [
     acpi # Battery command
     libnotify
+    brightnessctl
   ];
 }
