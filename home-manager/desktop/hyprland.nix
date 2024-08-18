@@ -7,44 +7,50 @@
     settings = {
       monitor = ", preferred, auto, 1";
       bind = [
-        "SUPER SHIFT, Q, killactive"
         "SUPER CTRL SHIFT, M, exit"
-        "SUPER SHIFT, A, exec, pkill wofi || wofi --show drun"
-        "SUPER SHIFT, S, exec, pkill waybar || waybar"
-
-        "SUPER, A, exec, alacritty"
-        "SUPER, S, exec, firefox"
-        "SUPER, D, exec, code"
+        "SUPER, Tab, exec, pkill wofi || wofi --show drun"
+        "SUPER SHIFT, Tab, exec, pkill waybar || waybar"
         "SUPER, slash, exec, code ~/dotfiles"
-        ", Print, exec, grimblast copy area"
 
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", Print, exec, grimblast copy area"
+
+        "SUPER CTRL, Q, killactive"
+        "SUPER CTRL, W, exec, alacritty"
+        "SUPER CTRL, A, exec, firefox"
+        "SUPER CTRL, S, exec, code"
+        # "SUPER CTRL, D, exec, obsidian"
+        "SUPER CTRL, C, exec, vesktop"
+        # "SUPER CTRL, X, exec, music"
+
+        "SUPER, A, workspace, 1"
+        "SUPER, S, workspace, 2"
+        "SUPER, D, workspace, 3"
+        "SUPER, C, workspace, 4"
+        "SUPER, X, workspace, 5"
+
+        "SUPER SHIFT, A, movetoworkspace, 1"
+        "SUPER SHIFT, S, movetoworkspace, 2"
+        "SUPER SHIFT, D, movetoworkspace, 3"
+        "SUPER SHIFT, C, movetoworkspace, 4"
+        "SUPER SHIFT, X, movetoworkspace, 5"
+
+        "SUPER, mouse_down, workspace, e+1"
+        "SUPER, mouse_up, workspace, e-1"
 
         "SUPER, left, movefocus, l"
         "SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
-
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-
-        "SUPER SHIFT, 1, movetoworkspace, 1"
-        "SUPER SHIFT, 2, movetoworkspace, 2"
-        "SUPER SHIFT, 3, movetoworkspace, 3"
-        "SUPER SHIFT, 4, movetoworkspace, 4"
-        "SUPER SHIFT, 5, movetoworkspace, 5"
-
-        "SUPER, mouse_down, workspace, e+1"
-        "SUPER, mouse_up, workspace, e-1"
       ];
       bindm =
         [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
 
-      input.force_no_accel = true;
+      input = {
+        force_no_accel = true;
+        kb_options = "ctrl:nocaps";
+      };
 
       general = {
         gaps_in = 5;
