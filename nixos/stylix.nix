@@ -13,5 +13,8 @@
         name = "Fira Code";
       };
     };
+
+    # Some reason stylix installs chrome accidentally
+    targets.chromium.enable = false;
   };
 }

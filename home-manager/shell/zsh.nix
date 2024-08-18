@@ -9,6 +9,7 @@
 
     shellAliases = {
       dotfiles = "sudo nixos-rebuild switch --flake ~/dotfiles";
+      dottest = "sudo nixos-rebuild test --flake ~/dotfiles";
       nix-shell = "nix-shell --run zsh";
       neofetch = "neowofetch";
     };
