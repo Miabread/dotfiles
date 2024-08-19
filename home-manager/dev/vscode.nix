@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.vscode = {
@@ -33,4 +33,7 @@
       "nix.serverSettings" = { nil.formatting.command = [ "nixfmt" ]; };
     };
   };
+
+  # Want these everywhere for projects' shell.nixes
+  home.packages = with pkgs; [ nil nixfmt-classic ];
 }
