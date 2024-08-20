@@ -9,7 +9,12 @@
 
       exec-once = [ "hyprlock" "waybar" ];
 
-      bindl = [ ", switch:on:Lid Switch, exec, hyprlock" ];
+      bindl = [
+        ", switch:on:Lid Switch, exec, hyprlock"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", Print, exec, grimblast copy area"
+      ];
 
       bind = [
         "SUPER CTRL SHIFT, M, exit"
@@ -18,10 +23,6 @@
         "SUPER, slash, exec, code ~/dotfiles"
         "SUPER, L, exec, hyprlock"
         "SUPER, F, togglefloating"
-
-        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-        ", Print, exec, grimblast copy area"
 
         "SUPER CTRL, Q, killactive"
         "SUPER CTRL, W, exec, alacritty"
