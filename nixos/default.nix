@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./login.nix ./desktop.nix ./stylix.nix ];
+  imports = [ ./desktop.nix ./stylix.nix ];
 }
