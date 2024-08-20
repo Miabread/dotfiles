@@ -57,6 +57,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [ ];
   };
+  services.getty.autologinUser = "miabread";
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

@@ -7,6 +7,8 @@
     settings = {
       monitor = ", preferred, auto, 1";
 
+      exec-once = [ "hyprlock" "waybar" ];
+
       bindl = [ ", switch:on:Lid Switch, exec, hyprlock" ];
 
       bind = [

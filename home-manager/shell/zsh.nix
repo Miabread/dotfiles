@@ -13,10 +13,17 @@
       nix-shell = "nix-shell --run zsh";
       neofetch = "neowofetch";
     };
+
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
+
+    loginExtra = ''
+      if [ "$(tty)" = "/dev/tty1" ];then
+        exec Hyprland
+      fi
+    '';
   };
 
   programs.starship = { enable = true; };
