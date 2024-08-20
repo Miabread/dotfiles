@@ -6,12 +6,15 @@
 
     settings = {
       monitor = ", preferred, auto, 1";
+
+      bindl = [ ", switch:on:Lid Switch, exec, hyprlock" ];
+
       bind = [
         "SUPER CTRL SHIFT, M, exit"
         "SUPER, Tab, exec, pkill wofi || wofi --show drun"
         "SUPER SHIFT, Tab, exec, pkill waybar || waybar"
         "SUPER, slash, exec, code ~/dotfiles"
-        "SUPER, L, exec, pkill hyprlock; hyprlock"
+        "SUPER, L, exec, hyprlock"
         "SUPER, F, togglefloating"
 
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
