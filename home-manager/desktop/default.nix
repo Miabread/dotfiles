@@ -1,5 +1,6 @@
 { ... }:
 
 {
-  imports = [ ./hyprland.nix ./wofi.nix ./waybar.nix ./mako.nix ];
+  imports =
+    [ ./hyprland.nix ./wofi.nix ./waybar.nix ./mako.nix ./hyprlock.nix ];
 }

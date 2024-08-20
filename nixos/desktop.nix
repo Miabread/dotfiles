@@ -20,6 +20,8 @@
     jack.enable = true;
   };
 
+  security.pam.services.hyprlock = { };
+
   environment.systemPackages = with pkgs; [
     acpi # Battery command
     libnotify

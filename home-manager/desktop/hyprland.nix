@@ -11,6 +11,7 @@
         "SUPER, Tab, exec, pkill wofi || wofi --show drun"
         "SUPER SHIFT, Tab, exec, pkill waybar || waybar"
         "SUPER, slash, exec, code ~/dotfiles"
+        "SUPER, L, exec, pkill hyprlock; hyprlock"
         "SUPER, F, togglefloating"
 
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
