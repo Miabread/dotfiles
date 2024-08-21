@@ -8,12 +8,18 @@
       monitor = ", preferred, auto, 1";
 
       exec-once = [ "hyprlock" "waybar" ];
+      exec = [ "wl-gammarelay-rs" ];
 
       bindl = [
         ", switch:on:Lid Switch, exec, hyprlock"
-        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
         ", Print, exec, grimblast copy area"
+
+        "CTRL, XF86MonBrightnessDown, exec, busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 4500"
+        "CTRL, XF86MonBrightnessUp, exec, busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500"
+        "CTRL, Print, exec, grimblast copy screen"
       ];
 
       bind = [
@@ -82,5 +88,5 @@
     };
   };
 
-  home.packages = [ pkgs.grimblast ];
+  home.packages = with pkgs; [ grimblast wl-gammarelay-rs ];
 }
