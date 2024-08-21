@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -57,7 +57,14 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [ ];
   };
-  services.getty.autologinUser = "miabread";
+
+  systemd.services."getty@tty1" = {
+    overrideStrategy = "asDropin";
+    serviceConfig.ExecStart = [
+      ""
+      "@${pkgs.util-linux}/sbin/agetty agetty --login-program ${config.services.getty.loginProgram} --autologin miabread --noclear --keep-baud %I 115200,38400,9600 $TERM"
+    ];
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
