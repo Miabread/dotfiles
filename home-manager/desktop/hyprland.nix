@@ -34,7 +34,7 @@
         "SUPER CTRL, W, exec, alacritty"
         "SUPER CTRL, A, exec, firefox"
         "SUPER CTRL, S, exec, code"
-        # "SUPER CTRL, D, exec, obsidian"
+        "SUPER CTRL, D, exec, obsidian"
         "SUPER CTRL, X, exec, vesktop"
         # "SUPER CTRL, C, exec, music"
 

@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./firefox.nix ./discord.nix ];
+  imports = [ ./firefox.nix ./discord.nix ./obsidian.nix ];
 }
