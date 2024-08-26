@@ -58,8 +58,16 @@
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
       ];
+
       bindm =
         [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
+
+      windowrulev2 = [
+        "workspace 1, class:(firefox)"
+        "workspace 2, class:(Code)"
+        "workspace 3, class:(obsidian)"
+        "workspace 4, class:(vesktop)"
+      ];
 
       input = {
         force_no_accel = true;
