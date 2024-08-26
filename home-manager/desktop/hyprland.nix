@@ -25,7 +25,7 @@
       bind = [
         "SUPER CTRL SHIFT, M, exit"
         "SUPER, Tab, exec, pkill wofi || wofi --show drun"
-        "SUPER SHIFT, Tab, exec, pkill waybar || waybar"
+        "SUPER CTRL, Tab, exec, pkill waybar || waybar"
         "SUPER, slash, exec, code ~/dotfiles"
         "SUPER, L, exec, hyprlock"
         "SUPER, F, togglefloating"
@@ -76,7 +76,7 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = 20;
+        gaps_out = "10, 20, 20, 20";
         border_size = 3;
       };
 
