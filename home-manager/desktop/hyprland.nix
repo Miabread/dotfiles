@@ -23,11 +23,14 @@
       ];
 
       bind = [
+        "SUPER, backspace, exec, hyprlock"
+        "SUPER CTRL, backspace, exec, systemctl poweroff"
+        "SUPER CTRL SHIFT, backspace, exec, systemctl reboot"
         "SUPER CTRL SHIFT, M, exit"
-        "SUPER, Tab, exec, pkill wofi || wofi --show drun"
-        "SUPER CTRL, Tab, exec, pkill waybar || waybar"
+
+        "SUPER, tab, exec, pkill wofi || wofi --show drun"
+        "SUPER, grave, exec, pkill waybar || waybar"
         "SUPER, slash, exec, code ~/dotfiles"
-        "SUPER, L, exec, hyprlock"
         "SUPER, F, togglefloating"
 
         "SUPER CTRL, Q, killactive"
