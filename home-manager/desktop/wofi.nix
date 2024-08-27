@@ -4,6 +4,8 @@
   programs.wofi = {
     enable = true;
 
+    settings = { no_actions = true; };
+
     style = with config.lib.stylix.colors.withHashtag; ''
       window {
         font-family: "${config.stylix.fonts.monospace.name}";

@@ -28,9 +28,6 @@
         };
 
         "hyprland/workspaces" = {
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
-
           format = "{icon}";
           format-icons = {
             "1" = "";
@@ -40,10 +37,15 @@
             "5" = "";
           };
           persistent-workspaces."*" = 5;
+
+          on-scroll-up = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
         };
 
         "hyprland/window" = {
           format = "{title}";
+          rewrite = { "(.*) — Mozilla Firefox" = "Firefox"; };
+
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
@@ -108,6 +110,24 @@
         margin-right: 20px;
       }
 
+      #workspaces {
+        padding: 0px;
+      }
+
+      #workspaces button {
+        border-radius: 0px;
+      }
+
+      #workspaces button:first-child {
+        border-top-left-radius: 7px; /* parent raduius - parent width */
+        border-bottom-left-radius: 7px;
+      }
+
+      #workspaces button:last-child {
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }
+
       #workspaces button.empty {
         color: ${base03};
       }
@@ -115,13 +135,16 @@
       #workspaces button.active {
         background-color: ${base0D};
         color: ${base00};
-        border-radius: 0px;
       }
 
       #workspaces button.urgent {
         background-color: ${base05};
         color: ${base00};
-        border-radius: 0px;
+      }
+
+      window#waybar.empty #window {
+        background-color: transparent;
+        border-color: transparent;
       }
     '';
   };
