@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.waybar = {
@@ -12,7 +12,14 @@
 
         "group/dashboard" = {
           orientation = "horizontal";
-          modules = [ "backlight" "pulseaudio" "clock" "battery" "clock#date" ];
+          modules = [
+            "pulseaudio#input"
+            "pulseaudio#output"
+            "clock"
+            "clock#date"
+            "battery"
+            "backlight"
+          ];
         };
 
         "group/networking" = {
@@ -36,7 +43,7 @@
         };
 
         "hyprland/window" = {
-          format = "{title}" + lib.strings.replicate 100 " ";
+          format = "{title}";
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
@@ -46,7 +53,13 @@
           format-icons = [ "" ];
         };
 
-        "pulseaudio" = {
+        "pulseaudio#input" = {
+          format-source = " {volume}%";
+          format-source-muted = " off";
+          format = "{format_source}";
+        };
+
+        "pulseaudio#output" = {
           format = "{icon} {volume}%";
           format-muted = "";
           format-icons = { default = [ "" "" ]; };
@@ -61,14 +74,12 @@
 
         "clock#date" = { format = " {:%m:%d}"; };
 
-        "custom/music" = {
-          format = lib.strings.replicate 30 " " + "music placeholder";
-        };
+        "custom/music" = { format = "music placeholder"; };
 
         "network" = {
           format = "{ifname}";
           format-wifi = " {essid} ({signalStrength}%)";
-          format-ethernet = " {ipaddr}/{cidr}";
+          format-ethernet = " Wired";
         };
       };
     };
@@ -93,12 +104,24 @@
         margin: 0px 5px;
       }
 
-      #backlight, #pulseaudio, #clock, #battery, #bluetooth {
+      #pulseaudio, #clock, #battery, #bluetooth {
         margin-right: 20px;
       }
 
-      #window {
-        /* min-width: 400px; */
+      #workspaces button.empty {
+        color: ${base03};
+      }
+
+      #workspaces button.active {
+        background-color: ${base0D};
+        color: ${base00};
+        border-radius: 0px;
+      }
+
+      #workspaces button.urgent {
+        background-color: ${base05};
+        color: ${base00};
+        border-radius: 0px;
       }
     '';
   };
