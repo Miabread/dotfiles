@@ -21,6 +21,7 @@
       "git.autofetch" = true;
       "git.enableSmartCommit" = true;
       "explorer.confirmDragAndDrop" = false;
+      "workbench.startupEditor" = "none";
 
       # Visuals
       "window.menuBarVisibility" = "toggle";
