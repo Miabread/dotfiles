@@ -5,33 +5,31 @@
 { pkgs, inputs, config, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ../nixos
   ];
 
-  # Bootloader.
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 10;
+  boot.loader = {
+    timeout = null;
+    efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 10;
+    };
   };
 
-  networking.hostName = "localtoast2"; # Define your hostname.
+  networking.hostName = "localtoast2";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
   time.hardwareClockInLocalTime = true;
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -44,13 +42,12 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  #  Don't forget to set a password with ‘passwd’.
   users.users.miabread = {
     isNormalUser = true;
     description = "Amelia Clark";
@@ -72,7 +69,6 @@
     backupFileExtension = "backup";
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;

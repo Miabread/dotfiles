@@ -21,7 +21,7 @@
 
     loginExtra = ''
       if [ "$(tty)" = "/dev/tty1" ];then
-        exec Hyprland
+        dbus-run-session Hyprland
       fi
     '';
   };
