@@ -74,7 +74,7 @@
           format-icons = [ "" "" "" "" "" ];
         };
 
-        "clock#date" = { format = " {:%m:%d}"; };
+        "clock#date" = { format = " {:%m/%d}"; };
 
         "custom/music" = { format = "music placeholder"; };
 
