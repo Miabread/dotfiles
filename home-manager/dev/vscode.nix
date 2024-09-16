@@ -32,6 +32,12 @@
       # Nix
       "nix.enableLanguageServer" = true;
       "nix.serverSettings" = { nil.formatting.command = [ "nixfmt" ]; };
+
+      # Rust
+      "rust-analyzer.inlayHints.chainingHints.enable" = false;
+      "rust-analyzer.inlayHints.parameterHints.enable" = false;
+      "rust-analyzer.inlayHints.genericParameterHints.const.enable" = false;
+      "rust-analyzer.inlayHints.typeHints.enable" = false;
     };
   };
 

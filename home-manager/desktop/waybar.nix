@@ -67,14 +67,20 @@
           format-icons = { default = [ "" "" ]; };
         };
 
-        "clock" = { format = " {:%H:%M}"; };
+        "clock" = {
+          format = " {:%H:%M}";
+          tooltip-format = "{:%I:%M %p}";
+        };
 
         "battery" = {
           format = "{icon} {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
 
-        "clock#date" = { format = " {:%m/%d}"; };
+        "clock#date" = {
+          format = " {:%m/%d}";
+          tooltip-format = "{:%a %b %Y-%m-%d}";
+        };
 
         "custom/music" = { format = "music placeholder"; };
 
