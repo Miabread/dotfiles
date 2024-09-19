@@ -20,12 +20,13 @@
         "CTRL, XF86MonBrightnessDown, exec, busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 4500"
         "CTRL, XF86MonBrightnessUp, exec, busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500"
         "CTRL, Print, exec, grimblast copy screen"
+
+        "SUPER CTRL, backspace, exec, systemctl poweroff"
+        "SUPER CTRL SHIFT, backspace, exec, systemctl reboot"
       ];
 
       bind = [
         "SUPER, backspace, exec, hyprlock"
-        "SUPER CTRL, backspace, exec, systemctl poweroff"
-        "SUPER CTRL SHIFT, backspace, exec, systemctl reboot"
         "SUPER CTRL SHIFT, M, exit"
 
         "SUPER, tab, exec, pkill wofi || wofi --show drun"
