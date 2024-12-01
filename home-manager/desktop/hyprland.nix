@@ -88,7 +88,7 @@
         rounding = 10;
 
         # Save battery
-        drop_shadow = false;
+        shadow.enabled = false;
         blur.enabled = false;
       };
 
