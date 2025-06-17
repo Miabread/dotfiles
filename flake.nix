@@ -15,13 +15,17 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.localtoast2 = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./base/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.stylix.nixosModules.stylix
-      ];
+    nixosConfigurations = {
+
+      lilac = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./lilac/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
+
     };
   };
 }

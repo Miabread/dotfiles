@@ -8,7 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ../nixos
+    ./nixos
   ];
 
   boot.loader = {
@@ -20,7 +20,7 @@
     };
   };
 
-  networking.hostName = "localtoast2";
+  networking.hostName = "lilac";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

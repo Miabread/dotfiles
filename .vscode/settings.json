@@ -13,10 +13,13 @@
     "ASDXC",
     "Distro",
     "Hyprland",
+    "miabread",
+    "networkmanager",
     "Nixos",
+    "pkgs",
     "stylix",
     "Vesktop",
     "Waybar",
     "Wofi"
-  ]
+]
 }
