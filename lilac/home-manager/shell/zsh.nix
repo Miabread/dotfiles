@@ -12,7 +12,7 @@
       dottest = "sudo nixos-rebuild test --flake ~/dotfiles";
       dotupdate = "sudo nix flake update";
       nix-shell = "nix-shell --run zsh";
-      neofetch = "neowofetch";
+      neofetch = "hyfetch";
     };
 
     history = {
