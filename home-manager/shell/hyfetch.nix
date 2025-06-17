@@ -6,7 +6,7 @@
     settings = {
       preset = "transgender";
       mode = "rgb";
-      color_align = { mode = "horizontal"; };
+      color_align = { mode = "random0"; };
     };
   };
 }

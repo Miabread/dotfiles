@@ -14,8 +14,9 @@
     "Distro",
     "Hyprland",
     "Nixos",
+    "stylix",
     "Vesktop",
     "Waybar",
     "Wofi"
-]
+  ]
 }

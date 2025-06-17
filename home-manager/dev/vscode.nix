@@ -1,8 +1,8 @@
 { inputs, pkgs, ... }:
 
 {
-  programs.vscode = {
-    enable = true;
+  programs.vscode.enable = true;
+  programs.vscode.profiles.default = {
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
 

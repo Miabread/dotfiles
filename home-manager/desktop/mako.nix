@@ -3,7 +3,9 @@
 {
   services.mako = {
     enable = true;
-    borderSize = 3;
-    borderRadius = 10;
+    settings = {
+      border-size = 3;
+      border-radius = 10;
+    };
   };
 }
