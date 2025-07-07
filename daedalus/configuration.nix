@@ -13,7 +13,6 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "miabread" = import ./home.nix; };
-    backupFileExtension = "backup";
     useGlobalPkgs = true;
   };
 
