@@ -2,13 +2,30 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = { "miabread" = import ./home.nix; };
+    backupFileExtension = "backup";
+    useGlobalPkgs = true;
+  };
+
+  users.users.miabread = {
+    isNormalUser = true;
+    description = "Miabread";
+    extraGroups = [ "networkmanager" "wheel" ];
+    initialPassword = "hunter2";
+  };
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   users.mutableUsers = false;
   users.users.root.initialPassword = "hunter2";

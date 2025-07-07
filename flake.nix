@@ -36,6 +36,7 @@
         modules = [
           ./daedalus/configuration.nix
           inputs.impermanence.nixosModules.impermanence
+          inputs.home-manager.nixosModules.default
         ];
       };
     };
