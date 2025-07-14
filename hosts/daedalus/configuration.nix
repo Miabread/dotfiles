@@ -51,7 +51,26 @@
       "/var/lib"
       "/var/log"
     ];
+    files = [
+      "/etc/machine-id"
+    ];
+    users.miabread = {
+      files = [
+        ".bash_history"
+        ".local/share/fish/fish_history"
+      ];
+    };
   };
+
+environment.etc."ssh/ssh_host_rsa_key".source
+  = "/nix/persist/etc/ssh/ssh_host_rsa_key";
+environment.etc."ssh/ssh_host_rsa_key.pub".source
+  = "/nix/persist/etc/ssh/ssh_host_rsa_key.pub";
+environment.etc."ssh/ssh_host_ed25519_key".source
+  = "/nix/persist/etc/ssh/ssh_host_ed25519_key";
+environment.etc."ssh/ssh_host_ed25519_key.pub".source
+  = "/nix/persist/etc/ssh/ssh_host_ed25519_key.pub";
+
 
   # Use the GRUB 2 boot loader.
   boot.loader.systemd-boot.enable = true;
