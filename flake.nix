@@ -25,7 +25,7 @@
       lilac = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./lilac/configuration.nix
+          ./hosts/lilac/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
         ];
@@ -34,7 +34,7 @@
       daedalus = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./daedalus/configuration.nix
+          ./hosts/daedalus/configuration.nix
           inputs.impermanence.nixosModules.impermanence
           inputs.home-manager.nixosModules.default
         ];
