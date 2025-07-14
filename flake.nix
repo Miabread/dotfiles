@@ -16,6 +16,11 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 

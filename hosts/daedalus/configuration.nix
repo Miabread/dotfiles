@@ -9,6 +9,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  environment.systemPackages = [ 
+    pkgs.just
+    pkgs.ripgrep
+    pkgs.rsync
+  ];
+
   services.openssh = { 
     enable = true;
     ports = [ 22 ];

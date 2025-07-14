@@ -1,17 +1,6 @@
 { ... }:
 
 {
-  programs.zellij = {
-    enable = true;
-    enableBashIntegration = true;
-    settings = {
-      default_shell = "fish";
-      simplified_ui = true;
-      show_startup_tips = false;
-      show_release_notes = false;
-    };
-  };
-
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
@@ -22,7 +11,12 @@
     enable = true;
   };
 
-  programs.neovim = {
+  programs.nvf = {
     enable = true;
+    settings = {
+      vim.viAlias = false;
+      vim.vimAlias = true;
+      vim.statusline.lualine.enable = true;
+    };
   };
 }

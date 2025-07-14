@@ -1,7 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  imports = [ ../../home/shell.nix ];
+  imports = [
+    inputs.nvf.homeManagerModules.default
+    ../../home/shell.nix
+  ];
 
   programs.git = {
     enable = true;
