@@ -16,10 +16,7 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };

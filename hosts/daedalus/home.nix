@@ -2,8 +2,8 @@
 
 {
   imports = [
-    inputs.nvf.homeManagerModules.default
     ../../home/shell.nix
+    ../../home/nvim
   ];
 
   programs.git = {
@@ -18,8 +18,6 @@
 
   home.username = "miabread";
   home.homeDirectory = "/home/miabread";
-
   home.stateVersion = "24.05";
-
   programs.home-manager.enable = true;
 }
