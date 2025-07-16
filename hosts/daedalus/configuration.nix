@@ -56,9 +56,11 @@
       "/etc/machine-id"
     ];
     users.miabread = {
+      directories = [
+        ".local/share/fish"
+      ];
       files = [
         ".bash_history"
-        ".local/share/fish/fish_history"
       ];
     };
   };

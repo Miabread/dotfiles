@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.bash = {
@@ -10,12 +10,6 @@
         exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
       fi
     '';
-  };
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    enableTransience = true;
   };
 
   programs.fish = {
@@ -41,6 +35,20 @@
       printf "\033]PF%s" "d4d4d4"
     '';
   };
+
+  # Shell prompt
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    enableTransience = true; # Only shows above last command
+  };
+
+  # Command not found replacement, default doesn't support flakes
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+  imports = [ inputs.nix-index-database.homeModules.nix-index ]; # Database to use with above
 
   programs.hyfetch = {
     enable = true;
