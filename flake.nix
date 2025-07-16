@@ -24,6 +24,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -44,6 +49,7 @@
           ./hosts/daedalus/configuration.nix
           inputs.impermanence.nixosModules.impermanence
           inputs.home-manager.nixosModules.default
+	  inputs.sops-nix.nixosModules.sops
         ];
       };
     };

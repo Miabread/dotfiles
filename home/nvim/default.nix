@@ -3,7 +3,12 @@
 {
   imports = [ inputs.nixCats.homeModule ];
 
-  config.nixCats = {
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    MANPAGER = "nvim +Man!";
+  };
+
+  nixCats = {
     enable = true;
     luaPath = ./.;
 

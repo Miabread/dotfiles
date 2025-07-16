@@ -10,6 +10,14 @@
       ./hardware-configuration.nix
     ];
 
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/miabread/.config/sops/age/keys.txt";
+
+    secrets.git-credentials.owner = "miabread";
+  };
+
   environment.systemPackages = [ 
     pkgs.just
     pkgs.ripgrep
@@ -61,6 +69,7 @@
       ];
       files = [
         ".bash_history"
+	".config/sops/age/keys.txt"
       ];
     };
   };

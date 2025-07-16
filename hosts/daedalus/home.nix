@@ -13,6 +13,7 @@
     userEmail = "miabreadloaf@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
+      credential.helper = "store";
     };
   };
 
