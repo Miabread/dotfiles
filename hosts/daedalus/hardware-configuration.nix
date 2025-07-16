@@ -28,18 +28,7 @@
   fileSystems."/nix" =
     { device = "zpool/nix";
       fsType = "zfs";
-    };
-
-  fileSystems."/etc/nixos" =
-    { device = "/nix/persist/etc/nixos";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/var/log" =
-    { device = "/nix/persist/var/log";
-      fsType = "none";
-      options = [ "bind" ];
+      neededForBoot = true;
     };
 
   swapDevices = [ ];
