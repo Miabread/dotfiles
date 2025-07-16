@@ -2,7 +2,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+require('miabread.keybinds')
+
 vim.opt.mouse = '';
+vim.opt.number = true;
+vim.opt.relativenumber = true;
 
 require('vscode').load()
 
@@ -12,3 +16,6 @@ require('lualine').setup {
         theme = 'vscode',
     },
 };
+
+require('noice').setup {};
+

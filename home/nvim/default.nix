@@ -13,10 +13,18 @@
     luaPath = ./.;
 
     categoryDefinitions.replace = { pkgs, ... }: {
+      lspsAndRuntimeDeps = {
+        general = with pkgs; [
+	  ripgrep
+	];
+      };
+
       startupPlugins = {
         general = with pkgs.vimPlugins; [
           vscode-nvim
 	  lualine-nvim
+	  telescope-nvim
+	  noice-nvim
 	];
       };
     };
