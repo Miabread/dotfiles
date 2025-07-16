@@ -18,4 +18,4 @@ require('lualine').setup {
 };
 
 require('noice').setup {};
-
+require('gitsigns').setup {};

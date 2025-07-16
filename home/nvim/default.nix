@@ -15,16 +15,17 @@
     categoryDefinitions.replace = { pkgs, ... }: {
       lspsAndRuntimeDeps = {
         general = with pkgs; [
-	  ripgrep
+	  ripgrep # Dep of telescope
 	];
       };
 
       startupPlugins = {
         general = with pkgs.vimPlugins; [
-          vscode-nvim
-	  lualine-nvim
-	  telescope-nvim
-	  noice-nvim
+          vscode-nvim # Color scheme
+	  lualine-nvim # Status line repalcement
+	  telescope-nvim # Multi tool selector
+	  noice-nvim # Command line replacement
+	  gitsigns-nvim # Git display
 	];
       };
     };
