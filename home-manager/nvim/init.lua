@@ -4,9 +4,10 @@ vim.g.maplocalleader = ' '
 
 require('miabread.keybinds')
 
-vim.opt.mouse = '';
-vim.opt.number = true;
-vim.opt.relativenumber = true;
+vim.opt.mouse = ''; -- Disable mouse
+vim.opt.number = true; -- Show line numbers
+vim.opt.relativenumber = true; -- Show relative line numbers near cursor
+vim.opt.cursorline = true; -- Highlight cursor line background
 
 require('vscode').load()
 
