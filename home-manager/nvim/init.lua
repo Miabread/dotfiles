@@ -19,3 +19,8 @@ require('lualine').setup {
 
 require('noice').setup {};
 require('gitsigns').setup {};
+
+require('toggleterm').setup {
+  open_mapping = [[<c-\>]],
+  direction = 'float',
+};

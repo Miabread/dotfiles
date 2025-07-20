@@ -1,11 +1,11 @@
 { config, inputs, ... }:
-
+let package-name = "nvim"; in
 {
   imports = [ inputs.nixCats.homeModule ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
-    MANPAGER = "nvim +Man!";
+    EDITOR = package-name;
+    MANPAGER = "${package-name} +Man!";
   };
 
   nixCats = {
@@ -26,11 +26,12 @@
 	  telescope-nvim # Multi tool selector
 	  noice-nvim # Command line replacement
 	  gitsigns-nvim # Git display
+	  toggleterm-nvim # Terminal replacement
 	];
       };
     };
 
-    packageNames = [ "nvim" ];
+    packageNames = [ package-name ];
     packageDefinitions.replace = {
       nvim = { ... }: {
         categories = {
