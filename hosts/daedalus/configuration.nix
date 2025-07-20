@@ -60,6 +60,8 @@
       "/etc/nixos"
       "/var/lib"
       "/var/log"
+      "/srv"
+      "/data"
     ];
     files = [
       "/etc/machine-id"
