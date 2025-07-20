@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../../home/shell.nix
-    ../../home/nvim
+    ../../home-manager/shell.nix
+    ../../home-manager/nvim
   ];
 
   programs.git = {
