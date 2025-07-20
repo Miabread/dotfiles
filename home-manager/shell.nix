@@ -33,6 +33,8 @@
       printf "\033]PD%s" "c678dd"
       printf "\033]PE%s" "56b6c2"
       printf "\033]PF%s" "d4d4d4"
+
+      set -g fish_greeting
     '';
   };
 
