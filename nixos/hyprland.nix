@@ -1,5 +1,5 @@
 { pkgs, ... }:
-
+# This is all stuff lilac needed to get Hyprland working, it's been over a year so I have no idea what this does
 {
   programs.hyprland = {
     enable = true;

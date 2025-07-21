@@ -8,7 +8,8 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./nixos
+    ./stylix.nix
+    ../../nixos/hyprland.nix
   ];
 
   boot.loader = {
@@ -67,6 +68,7 @@
     extraSpecialArgs = { inherit inputs; };
     users = { "miabread" = import ./home.nix; };
     backupFileExtension = "backup";
+    useGlobalPkgs = true;
   };
 
   nixpkgs.config.allowUnfree = true;

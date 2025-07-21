@@ -3,7 +3,7 @@
 {
   stylix = {
     enable = true;
-    image = ../wallpaper2.png;
+    image = ../../assets/wallpaper2.png;
     polarity = "dark";
 
     base16Scheme = {

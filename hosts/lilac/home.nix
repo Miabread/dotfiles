@@ -1,24 +1,19 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./home-manager ];
+  imports = [
+    ../../home-manager/shell/zsh.nix
+    ../../home-manager/vscode
+    ../../home-manager/hyprland
+  ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  home.packages = with pkgs; [ vesktop obsidian ];
+
+  programs.firefox = { enable = true; };
+  stylix.targets.firefox.profileNames = [ "default" ];
+
   home.username = "miabread";
   home.homeDirectory = "/home/miabread";
-
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
-
-  nixpkgs.config.allowUnfree = true;
-
-  # Let Home Manager install and manage itself.
+  home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 }

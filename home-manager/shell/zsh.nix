@@ -1,6 +1,8 @@
 { config, ... }:
 
 {
+  programs.alacritty = { enable = true; };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -28,4 +30,19 @@
   };
 
   programs.starship = { enable = true; };
+
+  programs.hyfetch = {
+    enable = true;
+    settings = {
+      preset = "transgender";
+      mode = "rgb";
+      color_align = {
+        mode = "custom";
+        custom_colors = {
+          "1" = 1;
+          "2" = 0;
+        };
+      };
+    };
+  };
 }
