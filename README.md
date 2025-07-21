@@ -1,34 +1,43 @@
-# 🥕 Miabread/dotfiles 🐇 
+# 🥕 Miabread/dotfiles 🐇
 
 The monorepo of my various config files for my various computers. Mainly managed by nixos and home-manager.
 
 ## Overview
 
-If you're looking for something specfic, this section might help.
+If you're looking for something specific, this section might help.
 
-### Configs of Note 
+### Configs of Note
 
 - [Neovim](/home-manager/nvim)
+- [Hyprland](/hosts/lilac/home-manager/desktop/hyprland.nix)
+- [Vscode (old)](/hosts/lilac/home-manager/dev/vscode.nix)
 
 ### Structure
 
-- [hosts](/hosts) - Individual machine configurations
-- [nixos](/nixos) - OS configuration files
-- [home-manager](/home-manager) - All home dotfiles, most will be in here
-- [secrets](/secrets) - Secrets managed by sops-nix
-- [hosts/lilac/{nixos,home-manager}](/hosts/lilac) - Previous modules that haven't been refactored yet, on the TODO list
+| Folder                            | Purpose                                        |
+| --------------------------------- | ---------------------------------------------- |
+| [`/hosts/`](/hosts)               | Individual machine configurations              |
+| [`/nixos/`](/nixos)               | OS configuration files                         |
+| [`/home-manager/`](/home-manager) | All home dotfiles, most things will be in here |
+| [`/secrets/`](/secrets)           | Secrets managed by sops-nix                    |
+
+Note [`lilac` has some modules](/hosts/lilac) that haven't been refactored into the new structure yet. This is on the TODO list.
 
 ### Hosts
 
-- [lilac](/hosts/lilac) - Personal laptop, nixos
-- tulip - Personal phone, android
-- lily - Home server, Proxmox
-  - [daedalus](/hosts/daedalus) - General services, nixos VM
-  - duskbreaker - Networking, debian VM
+| Hostname                               | OS        | Purpose          |
+| -------------------------------------- | --------- | ---------------- |
+| [`lilac`](/hosts/lilac)                | Nixos     | Personal laptop  |
+| `tulip`                                | Android   | Personal phone   |
+| `lily`                                 | Proxmox   | Home server      |
+| `lily` / [`daedalus`](/hosts/daedalus) | Nixos VM  | General services |
+| `lily` / `duskbreaker`                 | Debian VM | Networking       |
+
+
 
 ## Laptop "lilac" Hyprland Keybindings
 
-Section dedicated to the readme file pre-multi-machine refactor.
+Section dedicated to the readme file pre-multi-machine refactor. You can find the  code for reference in the [Hyprland](/hosts/lilac/home-manager/desktop/hyprland.nix) config.
 
 ### Workspaces (ASDXC)
 
