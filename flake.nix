@@ -49,7 +49,7 @@
           ./hosts/daedalus/configuration.nix
           inputs.impermanence.nixosModules.impermanence
           inputs.home-manager.nixosModules.default
-	  inputs.sops-nix.nixosModules.sops
+          inputs.sops-nix.nixosModules.sops
         ];
       };
     };

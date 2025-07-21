@@ -2,17 +2,15 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../nixos/syncthing.nix
     ../../nixos/openssh.nix
+    ../../nixos/just.nix
   ];
-
-  # System packages
-  environment.systemPackages = [ pkgs.just pkgs.ripgrep pkgs.rsync ];
 
   # Create main user and connect home-manager
   users = {

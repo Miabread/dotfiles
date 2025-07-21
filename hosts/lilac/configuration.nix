@@ -2,16 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, config, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  imports =
-    [ ./hardware-configuration.nix ./stylix.nix ../../nixos/hyprland.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./stylix.nix
+    ../../nixos/hyprland.nix
+    ../../nixos/just.nix
+  ];
 
   # System packages
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-  environment.systemPackages = [ pkgs.just ];
 
   # Create main user and connect home-manager
   users.users.miabread = {

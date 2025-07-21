@@ -31,7 +31,7 @@
 
         "SUPER, tab, exec, pkill wofi || wofi --show drun"
         "SUPER, grave, exec, pkill waybar || waybar"
-        "SUPER, slash, exec, code ~/dotfiles"
+        "SUPER, slash, exec, code /etc/nixos"
         "SUPER, F, togglefloating"
 
         "SUPER CTRL, Q, killactive"

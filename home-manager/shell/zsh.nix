@@ -9,14 +9,6 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases = {
-      dotswitch = "sudo nixos-rebuild switch --flake ~/dotfiles";
-      dottest = "sudo nixos-rebuild test --flake ~/dotfiles";
-      dotupdate = "sudo nix flake update";
-      nix-shell = "nix-shell --run zsh";
-      neofetch = "hyfetch";
-    };
-
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
