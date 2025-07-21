@@ -5,7 +5,7 @@
     ../../home-manager/shell/zsh.nix
     ../../home-manager/vscode
     ../../home-manager/hyprland
-    ../../home-manager/git-lilac-temp.nix
+    ../../home-manager/git.nix
   ];
 
   # User packages

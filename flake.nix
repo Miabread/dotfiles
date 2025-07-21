@@ -40,6 +40,7 @@
           ./hosts/lilac/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
         ];
       };
 

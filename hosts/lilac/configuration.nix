@@ -30,6 +30,15 @@
     useGlobalPkgs = true;
   };
 
+  # Secrets management
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/miabread/.config/sops/age/keys.txt";
+
+    secrets.git-credentials.owner = "miabread";
+  };
+
   # Core system components
   boot.loader = {
     timeout = null;
