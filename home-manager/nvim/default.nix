@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ inputs, ... }:
 let package-name = "nvim";
 in {
   imports = [ inputs.nixCats.homeModule ];
@@ -23,11 +23,12 @@ in {
       startupPlugins = {
         general = with pkgs.vimPlugins; [
           vscode-nvim # Color scheme
-          lualine-nvim # Status line repalcement
+          lualine-nvim # Status line replacement
           telescope-nvim # Multi tool selector
           noice-nvim # Command line replacement
           gitsigns-nvim # Git display
           toggleterm-nvim # Terminal replacement
+          nvim-treesitter # Language parser and highlighting
         ];
       };
     };

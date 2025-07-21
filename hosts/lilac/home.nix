@@ -4,6 +4,7 @@
   imports = [
     ../../home-manager/fish.nix
     ../../home-manager/vscode
+    ../../home-manager/nvim
     ../../home-manager/hyprland
     ../../home-manager/git.nix
   ];
