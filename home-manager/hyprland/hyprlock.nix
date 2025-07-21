@@ -5,7 +5,7 @@
     enable = true;
     settings = {
 
-      background = { path = "${../../assets/wallpaper2.png}"; };
+      background = { path = "${../../assets/wallpaper/star-lake.png}"; };
 
       label = {
         text = "$TIME";
