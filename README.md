@@ -9,8 +9,9 @@ If you're looking for something specific, this section might help.
 ### Configs of Note
 
 - [Neovim](/home-manager/nvim/)
+- [Fish](/home-manager/fish.nix)
 - [Hyprland](/home-manager/hyprland/)
-- [Vscode (old)](/home-manager/vscode/)
+- [Vscode (old)](/home-manager/vscode.nix)
 
 ### Structure
 

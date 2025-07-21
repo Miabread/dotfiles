@@ -55,9 +55,8 @@
     enable = true;
     enableFishIntegration = true;
   };
-  imports = [
-    inputs.nix-index-database.homeModules.nix-index
-  ]; # Database to use with above
+  # Database to use with above
+  imports = [ inputs.nix-index-database.homeModules.nix-index ];
 
   # Neofetch replacement
   programs.hyfetch = {
@@ -76,4 +75,22 @@
       };
     };
   };
+
+  # Per-project environment management and auto nix shell loading
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+  # No idea what this incantation does, copying from a year old file
+  # Git blame says "Have direnv to cache globally instead of within projects - Miabread"
+  home.file.".config/direnv/direnvrc".text = ''
+    : ''${XDG_CACHE_HOME:=$HOME/.cache}
+    declare -A direnv_layout_dirs
+    direnv_layout_dir() {
+      echo "''${direnv_layout_dirs[$PWD]:=$(
+        echo -n "$XDG_CACHE_HOME"/direnv/layouts/
+        echo -n "$PWD" | sha1sum | cut -d ' ' -f 1
+      )}"
+    }
+  '';
 }
