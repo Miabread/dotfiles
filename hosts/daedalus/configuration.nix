@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ inputs, ... }:
+{ config, inputs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -15,13 +15,16 @@
   # Create main user and connect home-manager
   users = {
     mutableUsers = false;
-    users.root.initialPassword = "hunter2";
+
+    users.root = {
+      hashedPasswordFile = config.sops.secrets.daedalus-password.path;
+    };
 
     users.miabread = {
       isNormalUser = true;
       description = "Miabread";
       extraGroups = [ "networkmanager" "wheel" ];
-      initialPassword = "hunter2";
+      hashedPasswordFile = config.sops.secrets.daedalus-password.path;
     };
   };
   home-manager = {
@@ -35,8 +38,10 @@
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/miabread/.config/sops/age/keys.txt";
-
-    secrets.git-credentials.owner = "miabread";
+    secrets = {
+      daedalus-password.neededForUsers = true;
+      git-credentials.owner = "miabread";
+    };
   };
 
   # Persistence using impermanence
