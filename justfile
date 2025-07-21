@@ -24,3 +24,6 @@ search-persist:
 # Search for files moved to backup (lilac with home-manager)
 search-backup:
   find /home/miabread -type f -name "*.backup" -not -path "/home/miabread/Storage/*"
+
+secrets:
+  sops ./secrets/secrets.yaml
