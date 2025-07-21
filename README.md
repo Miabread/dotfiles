@@ -8,36 +8,33 @@ If you're looking for something specific, this section might help.
 
 ### Configs of Note
 
-- [Neovim](/home-manager/nvim)
-- [Hyprland](/hosts/lilac/home-manager/desktop/hyprland.nix)
-- [Vscode (old)](/hosts/lilac/home-manager/dev/vscode.nix)
+- [Neovim](/home-manager/nvim/)
+- [Hyprland](/home-manager/hyprland/)
+- [Vscode (old)](/home-manager/vscode/)
 
 ### Structure
 
-| Folder                            | Purpose                                        |
-| --------------------------------- | ---------------------------------------------- |
-| [`/hosts/`](/hosts)               | Individual machine configurations              |
-| [`/nixos/`](/nixos)               | OS configuration files                         |
-| [`/home-manager/`](/home-manager) | All home dotfiles, most things will be in here |
-| [`/secrets/`](/secrets)           | Secrets managed by sops-nix                    |
-
-Note [`lilac` has some modules](/hosts/lilac) that haven't been refactored into the new structure yet. This is on the TODO list.
+| Folder                             | Purpose                                        |
+| ---------------------------------- | ---------------------------------------------- |
+| [`/hosts/`](/hosts/)               | Individual machine configurations              |
+| [`/nixos/`](/nixos/)               | OS configuration files                         |
+| [`/home-manager/`](/home-manager/) | All home dotfiles, most things will be in here |
+| [`/secrets/`](/secrets/)           | Secrets managed by sops-nix                    |
+| [`/assets/`](/assets/)             | Wallpapers and such                            |
 
 ### Hosts
 
-| Hostname                               | OS        | Purpose          |
-| -------------------------------------- | --------- | ---------------- |
-| [`lilac`](/hosts/lilac)                | Nixos     | Personal laptop  |
-| `tulip`                                | Android   | Personal phone   |
-| `lily`                                 | Proxmox   | Home server      |
-| `lily` / [`daedalus`](/hosts/daedalus) | Nixos VM  | General services |
-| `lily` / `duskbreaker`                 | Debian VM | Networking       |
-
-
+| Hostname                                | OS        | Purpose          |
+| --------------------------------------- | --------- | ---------------- |
+| [`lilac`](/hosts/lilac/)                | Nixos     | Personal laptop  |
+| `tulip`                                 | Android   | Personal phone   |
+| `lily`                                  | Proxmox   | Home server      |
+| `lily` / [`daedalus`](/hosts/daedalus/) | Nixos VM  | General services |
+| `lily` / `duskbreaker`                  | Debian VM | Networking       |
 
 ## Laptop "lilac" Hyprland Keybindings
 
-Section dedicated to the readme file pre-multi-machine refactor. You can find the  code for reference in the [Hyprland](/hosts/lilac/home-manager/desktop/hyprland.nix) config.
+Section dedicated to the old readme file before the repo's multi-machine refactor. You can find the code for reference in the [Hyprland](/home-manager/hyprland/) config.
 
 ### Workspaces (ASDXC)
 
