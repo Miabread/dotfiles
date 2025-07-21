@@ -1,6 +1,6 @@
 { config, inputs, ... }:
-let package-name = "nvim"; in
-{
+let package-name = "nvim";
+in {
   imports = [ inputs.nixCats.homeModule ];
 
   home.sessionVariables = {
@@ -14,30 +14,27 @@ let package-name = "nvim"; in
 
     categoryDefinitions.replace = { pkgs, ... }: {
       lspsAndRuntimeDeps = {
-        general = with pkgs; [
-	  ripgrep # Dep of telescope
-	];
+        general = with pkgs;
+          [
+            ripgrep # Dep of telescope
+          ];
       };
 
       startupPlugins = {
         general = with pkgs.vimPlugins; [
           vscode-nvim # Color scheme
-	  lualine-nvim # Status line repalcement
-	  telescope-nvim # Multi tool selector
-	  noice-nvim # Command line replacement
-	  gitsigns-nvim # Git display
-	  toggleterm-nvim # Terminal replacement
-	];
+          lualine-nvim # Status line repalcement
+          telescope-nvim # Multi tool selector
+          noice-nvim # Command line replacement
+          gitsigns-nvim # Git display
+          toggleterm-nvim # Terminal replacement
+        ];
       };
     };
 
     packageNames = [ package-name ];
     packageDefinitions.replace = {
-      nvim = { ... }: {
-        categories = {
-	  general = true;
-	};
-      };
+      nvim = { ... }: { categories = { general = true; }; };
     };
   };
 }

@@ -55,7 +55,9 @@
     enable = true;
     enableFishIntegration = true;
   };
-  imports = [ inputs.nix-index-database.homeModules.nix-index ]; # Database to use with above
+  imports = [
+    inputs.nix-index-database.homeModules.nix-index
+  ]; # Database to use with above
 
   # Neofetch replacement
   programs.hyfetch = {

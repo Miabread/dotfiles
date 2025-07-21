@@ -2,14 +2,13 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../nixos/syncthing.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../nixos/syncthing.nix
+  ];
 
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
@@ -19,13 +18,9 @@
     secrets.git-credentials.owner = "miabread";
   };
 
-  environment.systemPackages = [ 
-    pkgs.just
-    pkgs.ripgrep
-    pkgs.rsync
-  ];
+  environment.systemPackages = [ pkgs.just pkgs.ripgrep pkgs.rsync ];
 
-  services.openssh = { 
+  services.openssh = {
     enable = true;
     ports = [ 22 ];
     settings = {
@@ -56,32 +51,20 @@
   users.users.root.initialPassword = "hunter2";
 
   environment.persistence."/nix/persist" = {
-    directories = [
-      "/etc/nixos"
-      "/var/lib"
-      "/var/log"
-      "/srv"
-      "/data"
-    ];
-    files = [
-      "/etc/machine-id"
-    ];
+    directories = [ "/etc/nixos" "/var/lib" "/var/log" "/srv" "/data" ];
+    files = [ "/etc/machine-id" ];
     users.miabread = {
-      directories = [
-        ".local/share/fish"
-      ];
-      files = [
-        ".bash_history"
-	".config/sops/age/keys.txt"
-      ];
+      directories = [ ".local/share/fish" ];
+      files = [ ".bash_history" ".config/sops/age/keys.txt" ];
     };
   };
 
   boot.loader.systemd-boot.enable = true;
 
   networking.hostName = "daedalus"; # Define your hostname.
-  networking.hostId = "f0e87880"; # For zsh -mia
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.hostId = "f0e87880"; # For zfs -mia
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";

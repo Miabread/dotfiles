@@ -1,10 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = [
-    ../../home-manager/shell.nix
-    ../../home-manager/nvim
-  ];
+  imports = [ ../../home-manager/shell.nix ../../home-manager/nvim ];
 
   programs.git = {
     enable = true;
@@ -13,7 +10,7 @@
     userEmail = "miabreadloaf@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
-      credential.helper = "store --file /run/secrets/git-credentials"; 
+      credential.helper = "store --file /run/secrets/git-credentials";
     };
   };
 
