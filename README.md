@@ -94,7 +94,7 @@ Table has major applications but not everything.
 | Notes          | Obsidian                 |
 | Messaging      | Discord (Vesktop Client) |
 | Music          | null                     |
-| Shell          | Zsh                      |
+| Shell          | Fish                     |
 | Shell Prompt   | Starship                 |
 | Window Manager | Hyprland                 |
 | Status Bar     | Waybar                   |

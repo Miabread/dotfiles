@@ -1,6 +1,12 @@
 { config, ... }:
 
 {
+  programs.bash.profileExtra = ''
+    if [ "$(tty)" = "/dev/tty1" ];then
+      dbus-run-session Hyprland
+    fi
+  '';
+
   programs.hyprlock = {
     enable = true;
     settings = {

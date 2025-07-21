@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../home-manager/shell/fish.nix
+    ../../home-manager/fish.nix
     ../../home-manager/nvim
     ../../home-manager/git.nix
   ];

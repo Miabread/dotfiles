@@ -12,10 +12,6 @@
     ../../nixos/just.nix
   ];
 
-  # System packages
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
   # Create main user and connect home-manager
   users.users.miabread = {
     isNormalUser = true;

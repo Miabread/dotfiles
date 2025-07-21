@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../home-manager/shell/zsh.nix
+    ../../home-manager/fish.nix
     ../../home-manager/vscode
     ../../home-manager/hyprland
     ../../home-manager/git.nix
@@ -12,6 +12,7 @@
   home.packages = with pkgs; [ vesktop obsidian ];
   programs.firefox = { enable = true; };
   stylix.targets.firefox.profileNames = [ "default" ];
+  programs.alacritty = { enable = true; };
 
   # Home-manager core options
   home.username = "miabread";
