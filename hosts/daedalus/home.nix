@@ -1,19 +1,13 @@
-{ pkgs, inputs, ... }:
+{ ... }:
 
 {
-  imports = [ ../../home-manager/shell.nix ../../home-manager/nvim ];
+  imports = [
+    ../../home-manager/shell.nix
+    ../../home-manager/nvim
+    ../../home-manager/git.nix
+  ];
 
-  programs.git = {
-    enable = true;
-    package = pkgs.gitFull;
-    userName = "Miabread";
-    userEmail = "miabreadloaf@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-      credential.helper = "store --file /run/secrets/git-credentials";
-    };
-  };
-
+  # Home-manager core options
   home.username = "miabread";
   home.homeDirectory = "/home/miabread";
   home.stateVersion = "24.05";

@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./vscode.nix ./git.nix ./direnv.nix ];
+  imports = [ ./vscode.nix ./direnv.nix ];
 }

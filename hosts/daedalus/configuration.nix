@@ -8,8 +8,31 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../nixos/syncthing.nix
+    ../../nixos/openssh.nix
   ];
 
+  # System packages
+  environment.systemPackages = [ pkgs.just pkgs.ripgrep pkgs.rsync ];
+
+  # Create main user and connect home-manager
+  users = {
+    mutableUsers = false;
+    users.root.initialPassword = "hunter2";
+
+    users.miabread = {
+      isNormalUser = true;
+      description = "Miabread";
+      extraGroups = [ "networkmanager" "wheel" ];
+      initialPassword = "hunter2";
+    };
+  };
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = { "miabread" = import ./home.nix; };
+    useGlobalPkgs = true;
+  };
+
+  # Secrets management
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
@@ -18,38 +41,7 @@
     secrets.git-credentials.owner = "miabread";
   };
 
-  environment.systemPackages = [ pkgs.just pkgs.ripgrep pkgs.rsync ];
-
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = [ "miabread" ];
-      X11Forwarding = false;
-      PermitRootLogin = "no";
-    };
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = { "miabread" = import ./home.nix; };
-    useGlobalPkgs = true;
-  };
-
-  users.users.miabread = {
-    isNormalUser = true;
-    description = "Miabread";
-    extraGroups = [ "networkmanager" "wheel" ];
-    initialPassword = "hunter2";
-  };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-
-  users.mutableUsers = false;
-  users.users.root.initialPassword = "hunter2";
-
+  # Persistence using impermanence
   environment.persistence."/nix/persist" = {
     directories = [ "/etc/nixos" "/var/lib" "/var/log" "/srv" "/data" ];
     files = [ "/etc/machine-id" ];
@@ -59,34 +51,17 @@
     };
   };
 
+  # Core system components
   boot.loader.systemd-boot.enable = true;
-
-  networking.hostName = "daedalus"; # Define your hostname.
+  networking.hostName = "daedalus";
   networking.hostId = "f0e87880"; # For zfs -mia
-  networking.networkmanager.enable =
-    true; # Easiest to use and most distros use this by default.
-
+  networking.networkmanager.enable = true;
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
-
+  # Nixos core options
+  system.stateVersion = "25.05"; # Do not change from first install
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
 

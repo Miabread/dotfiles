@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 # This is all stuff lilac needed to get Hyprland working, it's been over a year so I have no idea what this does
 {
   programs.hyprland = {
@@ -9,6 +9,19 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
+  systemd.services."getty@tty1" = {
+    overrideStrategy = "asDropin";
+    serviceConfig.ExecStart = [
+      ""
+      "@${pkgs.util-linux}/sbin/agetty agetty --login-program ${config.services.getty.loginProgram} --autologin miabread --noclear --keep-baud %I 115200,38400,9600 $TERM"
+    ];
   };
 
   security.rtkit.enable = true;
