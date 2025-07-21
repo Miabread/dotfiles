@@ -1,4 +1,4 @@
-# 🐇 Miabread/dotfiles ❄️
+# 🥕 Miabread/dotfiles 🐇 
 
 The monorepo of my various config files for my various computers. Mainly managed by nixos and home-manager.
 
