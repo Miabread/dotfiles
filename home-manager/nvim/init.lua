@@ -19,6 +19,8 @@ require('lualine').setup {
 };
 
 require('noice').setup {};
+
+vim.opt.signcolumn = 'yes:1';
 require('gitsigns').setup {};
 
 require('toggleterm').setup {
