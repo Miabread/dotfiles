@@ -1,8 +1,30 @@
-# ~/dotfiles
+# 🐇 Miabread/dotfiles ❄️
 
-The nixos ahd home-manager configuration I use for my daily laptop.
+The monorepo of my various config files for my various computers. Mainly managed by nixos and home-manager.
 
-## Workspaces (ASDXC)
+## Overview
+
+If you're looking for something specfic, this section might help.
+
+### Configs of Note 
+
+- [Personal Laptop "lilac"](/hosts/lilac)
+- [Home Server "daedalus"](/hosts/daedalus)
+- [Neovim](/home-manager/nvim)
+
+### Structure
+
+- [hosts](/hosts) - Individual machine configurations
+- [nixos](/nixos) - OS configuration files
+- [home-manager](/home-manager) - All home dotfiles, most will be in here
+- [secrets](/secrets) - Secrets managed by sops-nix
+- [hosts/lilac/{nixos,home-manager}](/hosts/lilac) - Previous modules that haven't been refactored yet, on the TODO list
+
+## Laptop "lilac" Hyprland Keybindings
+
+Section dedicated to the readme file pre-multi-machine refactor.
+
+### Workspaces (ASDXC)
 
 Layout that allows managing workspaces with minimal left hand reach.
 
@@ -16,7 +38,7 @@ Each workspace is dedicated to an application I use often.
 | X   | Messaging |
 | C   | Music     |
 
-## Key Bindings
+### Key Bindings
 
 Implemented at a window manager level.
 
@@ -48,7 +70,7 @@ If lost, press Ctrl + Slash to bring up this file.
 |                  | Print           | Screenshot selection |
 | Ctrl             | Print           | Screenshot screen    |
 
-## Applications
+### Applications
 
 Table has major applications but not everything.
 
