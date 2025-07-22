@@ -16,6 +16,7 @@
     variant = "";
   };
 
+  # Auto-login when on tty1, lock screen is handled by GUI
   systemd.services."getty@tty1" = {
     overrideStrategy = "asDropin";
     serviceConfig.ExecStart = [

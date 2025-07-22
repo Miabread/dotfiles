@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 
 {
+  # Status bar
   programs.waybar = {
     enable = true;
 

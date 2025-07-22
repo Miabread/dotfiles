@@ -1,11 +1,14 @@
 { config, ... }:
 
 {
+  # The login chain is as follows:
+  # Auto-login -> bash starts hyprland -> hyprland starts hyprlock
   programs.bash.profileExtra = ''
     if [ "$(tty)" = "/dev/tty1" ];then
       dbus-run-session Hyprland
     fi
   '';
+  wayland.windowManager.hyprland.settings.exec-once = [ "hyprlock" ];
 
   programs.hyprlock = {
     enable = true;
