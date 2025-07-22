@@ -38,6 +38,7 @@
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/miabread/.config/sops/age/keys.txt";
+
     secrets = {
       daedalus-password.neededForUsers = true;
       git-credentials.owner = "miabread";
