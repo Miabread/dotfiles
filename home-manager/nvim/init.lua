@@ -9,6 +9,7 @@ vim.opt.number = true; -- Show line numbers
 vim.opt.relativenumber = true; -- Show relative line numbers near cursor
 vim.opt.cursorline = true; -- Highlight cursor line background
 vim.opt.scrolloff = 10; -- Always keep lines above cursor
+vim.opt.expandtab = true; -- Replace tabs with spaces
 
 require('vscode').load()
 
@@ -31,5 +32,14 @@ require('toggleterm').setup {
 
 require('notify').setup {};
 
-require('nvim-treesitter').setup {};
+require('nvim-treesitter.configs').setup {
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        enable = false,
+    },
+};
+
+require('ibl').setup {};
 

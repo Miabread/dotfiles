@@ -29,7 +29,8 @@ in {
           gitsigns-nvim # Git display
           toggleterm-nvim # Terminal replacement
           nvim-treesitter.withAllGrammars # Language parser and highlighting
-	  nvim-notify # Notifications replacement
+          nvim-notify # Notifications replacement
+          indent-blankline-nvim # Show intendation
         ];
       };
     };
