@@ -28,7 +28,8 @@ in {
           noice-nvim # Command line replacement
           gitsigns-nvim # Git display
           toggleterm-nvim # Terminal replacement
-          nvim-treesitter # Language parser and highlighting
+          nvim-treesitter.withAllGrammars # Language parser and highlighting
+	  nvim-notify # Notifications replacement
         ];
       };
     };

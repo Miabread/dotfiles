@@ -28,3 +28,8 @@ require('toggleterm').setup {
   open_mapping = [[<c-\>]],
   direction = 'float',
 };
+
+require('notify').setup {};
+
+require('nvim-treesitter').setup {};
+
