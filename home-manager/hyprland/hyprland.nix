@@ -1,13 +1,14 @@
 { pkgs, ... }:
 
 {
+  # Window manager!
   wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
       monitor = ", preferred, auto, 1";
 
-      exec-once = [ "hyprlock" "waybar" ];
+      exec-once = [ "waybar" ];
       exec = [ "wl-gammarelay-rs" ];
 
       bindl = [
@@ -96,6 +97,11 @@
         vfr = true;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
+      };
+
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
       };
     };
   };

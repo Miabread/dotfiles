@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, ... }:
+{ config, inputs, ... }:
 
 {
   imports = [
@@ -13,11 +13,19 @@
   ];
 
   # Create main user and connect home-manager
-  users.users.miabread = {
-    isNormalUser = true;
-    description = "Amelia Clark";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = [ ];
+  users = {
+    mutableUsers = false;
+
+    users.root = {
+      hashedPasswordFile = config.sops.secrets.lilac-password.path;
+    };
+
+    users.miabread = {
+      isNormalUser = true;
+      description = "Miabread";
+      extraGroups = [ "networkmanager" "wheel" ];
+      hashedPasswordFile = config.sops.secrets.lilac-password.path;
+    };
   };
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -32,7 +40,10 @@
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/miabread/.config/sops/age/keys.txt";
 
-    secrets.git-credentials.owner = "miabread";
+    secrets = {
+      lilac-password.neededForUsers = true;
+      git-credentials.owner = "miabread";
+    };
   };
 
   # Core system components

@@ -1,6 +1,8 @@
 { config, ... }:
 
 {
+  # App launcher
+  # TODO shell commands show up here but do nothing, maybe either filter or start them in a term
   programs.wofi = {
     enable = true;
 
