@@ -8,6 +8,7 @@ vim.opt.mouse = ''; -- Disable mouse
 vim.opt.number = true; -- Show line numbers
 vim.opt.relativenumber = true; -- Show relative line numbers near cursor
 vim.opt.cursorline = true; -- Highlight cursor line background
+vim.opt.scrolloff = 10; -- Always keep lines above cursor
 
 require('vscode').load()
 

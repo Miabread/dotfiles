@@ -50,7 +50,7 @@
     directories = [ "/etc/nixos" "/var/lib" "/var/log" "/srv" "/data" ];
     files = [ "/etc/machine-id" "/root/.config/sops/age/keys.txt" ];
     users.miabread = {
-      directories = [ ".local/share/fish" ];
+      directories = [ ".local/share/fish" ".local/share/zoxide/"];
       files = [ ".bash_history" ".config/sops/age/keys.txt" ];
     };
   };
