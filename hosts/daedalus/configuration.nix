@@ -37,7 +37,8 @@
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
-    age.keyFile = "/home/miabread/.config/sops/age/keys.txt";
+    age.keyFile = "/nix/persist/home/miabread/.config/sops/age/keys.txt";
+    age.generateKey = false;
     secrets = {
       daedalus-password.neededForUsers = true;
       git-credentials.owner = "miabread";
@@ -47,7 +48,7 @@
   # Persistence using impermanence
   environment.persistence."/nix/persist" = {
     directories = [ "/etc/nixos" "/var/lib" "/var/log" "/srv" "/data" ];
-    files = [ "/etc/machine-id" ];
+    files = [ "/etc/machine-id" "/root/.config/sops/age/keys.txt" ];
     users.miabread = {
       directories = [ ".local/share/fish" ];
       files = [ ".bash_history" ".config/sops/age/keys.txt" ];
