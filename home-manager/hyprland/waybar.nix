@@ -37,7 +37,7 @@
             "4" = "";
             "5" = "";
           };
-          persistent-workspaces."*" = 5;
+          persistent-workspaces."*" = [ 1 2 3 4 5 ];
 
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";

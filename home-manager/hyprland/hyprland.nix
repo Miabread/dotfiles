@@ -6,7 +6,11 @@
     enable = true;
 
     settings = {
-      monitor = ", preferred, auto, 1";
+      monitor = [
+        "eDP-1, preferred, auto, 1"
+        "HDMI-A-1, preferred, auto, 1, mirror, eDP-1"
+        "DP-1, preferred, auto, 1"
+      ];
 
       exec-once = [ "waybar" ];
       exec = [ "wl-gammarelay-rs" ];
@@ -31,7 +35,7 @@
         "SUPER CTRL SHIFT, M, exit"
 
         "SUPER, tab, exec, pkill wofi || wofi --show drun"
-        "SUPER, grave, exec, pkill waybar || waybar"
+        "SUPER CTRL, tab, exec, pkill waybar || waybar"
         "SUPER, slash, exec, code /etc/nixos"
         "SUPER, F, togglefloating"
 

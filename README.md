@@ -73,7 +73,7 @@ If lost, press Ctrl + Slash to bring up this file.
 | Super Ctrl Shift | Backspace       | Reboot               |
 | Super Ctrl Shift | M               | Exit desktop         |
 | Super            | Tab             | Toggle launcher      |
-| Super            | Grave           | Toggle status bar    |
+| Super Ctrl       | Tab             | Toggle status bar    |
 | Super            | F               | Toggle floating      |
 | Super            | Slash           | Quick open dotfiles  |
 |                  | Brightness Down | Decrease brightness  |
