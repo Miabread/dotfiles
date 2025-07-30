@@ -40,14 +40,35 @@
       printf "\033]PF%s" "d4d4d4"
 
       set -g fish_greeting # TODO replace with something fun instead of disabling
+
+      # Manually enable starship to have more customization
+      function starship_transient_prompt_func
+        # Make sure this matches programs.starship.settings.format
+        starship module shlvl
+        starship module character
+      end
+      starship init fish | source
+      enable_transience
     '';
   };
 
   # Shell prompt
   programs.starship = {
     enable = true;
-    enableFishIntegration = true;
-    enableTransience = true; # Only shows above last command
+
+    settings = {
+      # Make sure this matches programs.fish.shellInit.starship_transient_prompt_func
+      format = "$all$shlvl$character";
+
+      shlvl = {
+        disabled = false;
+        format = "[$symbol]($style)";
+        repeat = true;
+        symbol = "❯";
+        repeat_offset = 1;
+        threshold = 0;
+      };
+    };
   };
 
   # Command not found replacement, default doesn't support flakes
