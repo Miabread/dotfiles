@@ -10,6 +10,9 @@ vim.opt.relativenumber = true; -- Show relative line numbers near cursor
 vim.opt.cursorline = true; -- Highlight cursor line background
 vim.opt.scrolloff = 10; -- Always keep lines above cursor
 vim.opt.expandtab = true; -- Replace tabs with spaces
+vim.opt.tabstop = 4; -- Set tab width
+vim.opt.shiftwidth = 4; -- Set autoindent width
+
 
 require('vscode').load()
 
@@ -42,4 +45,8 @@ require('nvim-treesitter.configs').setup {
 };
 
 require('ibl').setup {};
+
+vim.diagnostic.config {
+    virtual_lines = true,
+};
 
