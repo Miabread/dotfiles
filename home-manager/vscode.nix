@@ -42,5 +42,5 @@
   };
 
   # Want these everywhere for projects' shell.nixes
-  home.packages = with pkgs; [ nil nixfmt-classic ];
+  home.packages = with pkgs; [ nil nixfmt-classic nodejs ];
 }
