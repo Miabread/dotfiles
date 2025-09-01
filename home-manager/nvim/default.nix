@@ -17,6 +17,7 @@ in {
         general = with pkgs;
           [
             ripgrep # Dep of telescope
+            fd # Dep of telescope
           ];
       };
 
@@ -31,6 +32,7 @@ in {
           nvim-treesitter.withAllGrammars # Language parser and highlighting
           nvim-notify # Notifications replacement
           indent-blankline-nvim # Show intendation
+          nvim-lspconfig # Default config for language servers
         ];
       };
     };
