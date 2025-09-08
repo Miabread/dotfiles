@@ -20,6 +20,7 @@
       "git.confirmSync" = false;
       "git.autofetch" = true;
       "git.enableSmartCommit" = true;
+      "git.openRepositoryInParentFolders" = "always";
       "explorer.confirmDragAndDrop" = false;
       "workbench.startupEditor" = "none";
 
