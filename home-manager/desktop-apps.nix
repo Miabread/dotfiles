@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     vesktop # Discord client
     obsidian # Note taking
+    libreoffice # Document editing
   ];
 
   # Terminal emulator
