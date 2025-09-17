@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   # Status bar
@@ -99,7 +99,7 @@
       }
 
       window > box {
-        font-family: "${config.stylix.fonts.monospace.name}";
+        font-family: "${config.stylix.fonts.monospace.name} 'Font Awesome'";
         font-size: 13px;
         color: ${base05};
         margin: 10px 15px 0px; /* left-right margin accounts for module's margin */
@@ -157,6 +157,4 @@
   };
 
   stylix.targets.waybar.enable = false;
-
-  home.packages = [ pkgs.font-awesome ];
 }

@@ -25,5 +25,6 @@ search-persist:
 search-backup:
   find /home/miabread -type f -name "*.backup" -not -path "/home/miabread/Storage/*"
 
+# Edit the secrets file
 secrets:
   sops ./secrets/secrets.yaml
