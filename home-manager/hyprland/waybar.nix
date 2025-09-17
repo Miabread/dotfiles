@@ -53,7 +53,7 @@
 
         "backlight" = {
           format = "{icon} {percent}%";
-          format-icons = [ "󰃠" ];
+          format-icons = [ "󰃚" "󰃛" "󰃜" "󰃝" "󰃞" "󰃟" "󰃠" ];
         };
 
         "pulseaudio#input" = {
