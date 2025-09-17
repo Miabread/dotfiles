@@ -28,3 +28,8 @@ search-backup:
 # Edit the secrets file
 secrets:
   sops ./secrets/secrets.yaml
+
+# Remove generations older than 2 weeks
+garbage:
+    nix-collect-garbage --delete-older-than 14d
+    echo "Reminder: Rebuild nixos after to update bootloader entires"
