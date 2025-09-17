@@ -94,6 +94,10 @@
           "2" = 0;
         };
       };
+
+      # Default options that need to be set now apparently
+      backend = "neofetch";
+      pride_month_disable = false;
     };
   };
 
