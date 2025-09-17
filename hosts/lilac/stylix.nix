@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   stylix = {
@@ -29,6 +29,16 @@
     };
 
     fonts = {
+      serif = {
+        package = pkgs.roboto-slab;
+        name = "Roboto Slab";
+      };
+
+      sansSerif = {
+        package = pkgs.fira;
+        name = "Fira Sans";
+      };
+
       monospace = {
         package = pkgs.nerd-fonts.fira-code;
         name = "Fira Code Nerd Font Propo";
