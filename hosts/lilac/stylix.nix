@@ -33,6 +33,11 @@
         package = pkgs.nerd-fonts.fira-code;
         name = "Fira Code Nerd Font";
       };
+
+      emoji = {
+        package = pkgs.twitter-color-emoji;
+        name = "Twitter Color Emoji";
+      };
     };
 
     # Some reason stylix installs chrome accidentally
