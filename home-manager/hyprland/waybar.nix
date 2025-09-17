@@ -99,7 +99,7 @@
       }
 
       window > box {
-        font-family: "${config.stylix.fonts.monospace.name} 'Font Awesome'";
+        font-family: "${config.stylix.fonts.monospace.name} Propo";
         font-size: 13px;
         color: ${base05};
         margin: 10px 15px 0px; /* left-right margin accounts for module's margin */
@@ -126,13 +126,13 @@
       }
 
       #workspaces button:first-child {
-        border-top-left-radius: 7px; /* parent raduius - parent width */
-        border-bottom-left-radius: 7px;
+        border-top-left-radius: 5px; /* parent radius - parent width - 2 to get rid of gap */
+        border-bottom-left-radius: 5px;
       }
 
       #workspaces button:last-child {
-        border-top-right-radius: 7px;
-        border-bottom-right-radius: 7px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
 
       #workspaces button.empty {
