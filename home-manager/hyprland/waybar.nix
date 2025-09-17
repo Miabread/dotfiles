@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ config, ... }:
 
 {
   # Status bar
@@ -33,7 +33,7 @@
           format-icons = {
             "1" = "";
             "2" = "";
-            "3" = "";
+            "3" = "";
             "4" = "";
             "5" = "";
           };
@@ -53,7 +53,7 @@
 
         "backlight" = {
           format = "{icon} {percent}%";
-          format-icons = [ "" ];
+          format-icons = [ "󰃠" ];
         };
 
         "pulseaudio#input" = {
@@ -69,7 +69,7 @@
         };
 
         "clock" = {
-          format = " {:%H:%M}";
+          format = "󰥔 {:%H:%M}";
           tooltip-format = "{:%I:%M %p}";
         };
 
@@ -88,7 +88,7 @@
         "network" = {
           format = "{ifname}";
           format-wifi = " {essid} ({signalStrength}%)";
-          format-ethernet = " Wired";
+          format-ethernet = " Wired";
         };
       };
     };
@@ -99,7 +99,7 @@
       }
 
       window > box {
-        font-family: "${config.stylix.fonts.monospace.name} Propo";
+        font-family: "${config.stylix.fonts.monospace.name}";
         font-size: 13px;
         color: ${base05};
         margin: 10px 15px 0px; /* left-right margin accounts for module's margin */
